@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{xultestrunner}
-  s.version = "0.3.0"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Gabriel Gironda"]
-  s.date = %q{2009-10-14}
+  s.date = %q{2009-10-18}
   s.default_executable = %q{xultest}
   s.description = %q{XUL based test runner for running your JS unit tests.}
   s.email = %q{contact@gironda.org}
@@ -31,9 +31,16 @@ Gem::Specification.new do |s|
      "test/xultestrunner_test.rb",
      "xpcomcore/app/application.ini",
      "xpcomcore/app/chrome/chrome.manifest",
+     "xpcomcore/app/chrome/content/scripts/xul_test_runner.js",
      "xpcomcore/app/chrome/content/xul/main_window.xul",
+     "xpcomcore/app/chrome/icons/default/default.png",
      "xpcomcore/app/components/bootstrapper.js",
      "xpcomcore/app/defaults/preferences/prefs.js",
+     "xpcomcore/stub_runners/XULTestRunner.app/Contents/Info.plist",
+     "xpcomcore/stub_runners/XULTestRunner.app/Contents/MacOS/stub_runner",
+     "xpcomcore/stub_runners/XULTestRunner.app/Contents/PkgInfo",
+     "xpcomcore/stub_runners/XULTestRunner.app/Contents/Resources/.gitignore",
+     "xpcomcore/stub_runners/XULTestRunner.app/Contents/Resources/xultestrunner.icns",
      "xultestrunner.gemspec"
   ]
   s.homepage = %q{http://github.com/gabrielg/xultestrunner}
