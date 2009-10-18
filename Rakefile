@@ -5,13 +5,16 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "xultestrunner"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "gabriel.gironda@centro.net"
+    gem.executables = "xultest"
+    gem.summary = %Q{XUL based test runner for running your JS unit tests.}
+    gem.description = %Q{XUL based test runner for running your JS unit tests.}
+    gem.email = "contact@gironda.org"
     gem.homepage = "http://github.com/gabrielg/xultestrunner"
-    gem.authors = ["ggironda"]
+    gem.authors = ["Gabriel Gironda"]
+    gem.add_dependency "xpcomcore-rubygem", ">=0.5.3"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
+  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
 end
@@ -52,4 +55,21 @@ Rake::RDocTask.new do |rdoc|
   rdoc.title = "xultestrunner #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
+end
+
+gem 'jsdoc-toolkit'
+require 'jsdoc-toolkit/doc_task'
+JsDocToolkit::DocTask.new("doc:app") do |doc|
+  doc.jsdoc_dir = "xpcomcore/app/doc"
+  doc.jsdoc_files << "xpcomcore/app/chrome"
+  doc.jsdoc_files << "xpcomcore/app/components"
+  
+end
+
+require 'xpcomcore-rubygem/tasks/application_task.rb'
+XPCOMCore::Tasks::ApplicationTask.new
+
+task :gemspec do
+  system("git", "add", "xpcomcore/app/application.ini")
+  system("git", "commit", "-m", "Bumping application.ini", "xpcomcore/app/application.ini")
 end
