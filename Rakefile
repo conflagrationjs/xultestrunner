@@ -5,13 +5,12 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "xultestrunner"
-    gem.executables = "xultest"
     gem.summary = %Q{XUL based test runner for running your JS unit tests.}
     gem.description = %Q{XUL based test runner for running your JS unit tests.}
     gem.email = "contact@gironda.org"
     gem.homepage = "http://github.com/gabrielg/xultestrunner"
     gem.authors = ["Gabriel Gironda"]
-    gem.add_dependency "xpcomcore-rubygem", ">=0.5.3"
+    gem.add_dependency "xpcomcore-rubygem", ">=0.6.3"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
